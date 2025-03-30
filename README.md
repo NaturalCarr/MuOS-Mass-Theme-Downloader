@@ -52,12 +52,6 @@ Current Release: https://github.com/MustardOS/theme/releases/tag/v1.2.3
 Download Directory: /path/to/muxthm_downloads
 Found 3 .muxthm files to download.
 
-Downloading: theme1.muxthm [1.2 MB/1.2 MB]
-Completed: 1/3 files, 1.2 MB/3.6 MB
-
-Downloading: theme2.muxthm [1.1 MB/1.1 MB]
-Completed: 2/3 files, 2.3 MB/3.6 MB
-
 Downloading: theme3.muxthm [1.3 MB/1.3 MB]
 Completed: 3/3 files, 3.6 MB/3.6 MB
 
