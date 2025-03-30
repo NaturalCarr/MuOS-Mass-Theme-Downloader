@@ -152,8 +152,10 @@ def main():
             completed_files += 1
             completed_bytes += size
 
-        sys.stdout.write(f"\033[{len(saved_lines)+3};0H")
+        # Move the cursor to the bottom of the output after all downloads
+        sys.stdout.write("\033[0J")  # Clear everything below the cursor
         print("All .muxthm downloads from latest release complete.")
+        print()  # Add an extra line to ensure the command prompt appears below
     finally:
         print(CURSOR_SHOW)  # Ensure cursor is shown even if an error occurs
 
