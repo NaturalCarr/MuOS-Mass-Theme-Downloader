@@ -111,6 +111,13 @@ def download_file(name, url, size_expected, completed_files, total_files, comple
             refresh_status_block(name, 0, size_expected, completed_files, total_files, completed_bytes, total_bytes)
 
 
+def sanitize_filename(name):
+    # Replace periods with spaces except for the last period before the extension
+    parts = name.rsplit('.', 1)
+    parts[0] = parts[0].replace('.', ' ')
+    return '.'.join(parts)
+
+
 def main():
     # Clear any residual output and ensure the cursor starts fresh
     sys.stdout.write("\033c")  # Clear the screen
@@ -130,7 +137,7 @@ def main():
         ]
 
         pending_assets = [
-            (name, url, size) for (name, url, size) in all_assets if name not in downloaded
+            (sanitize_filename(name), url, size) for (name, url, size) in all_assets if name not in downloaded
         ]
 
         total_files = len(pending_assets)

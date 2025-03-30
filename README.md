@@ -1,14 +1,16 @@
 # Muxthm Downloader
 
-This script automates the process of downloading `.muxthm` files from the latest release of a specified GitHub repository. It ensures efficient downloading with retry mechanisms, progress tracking, and error logging.
+This script downloads `.muxthm` files from the latest release of the specified GitHub repository. It ensures that file names are sanitized by replacing periods (`.`) with spaces (` `) except for the file extension.
 
 ## Features
+- Fetches the latest release information from GitHub.
+- Downloads `.muxthm` files to a specified directory.
+- Displays real-time download progress and status.
+- Handles errors with retry logic and logs them to a file.
+- Sanitizes file names for better readability.
 
-- Fetches the latest release information from a GitHub repository.
-- Downloads `.muxthm` files from the release assets.
-- Displays real-time progress updates for downloads.
-- Logs errors to a file for troubleshooting.
-- Automatically retries failed downloads after a delay.
+## Recent Updates
+- **File Name Sanitization**: Periods in file names are now replaced with spaces, except for the file extension (e.g., `Birds.-.Orioles.x.Sakura` becomes `Birds - Orioles x Sakura`).
 
 ## Requirements
 
@@ -27,17 +29,12 @@ The script includes the following configurable parameters:
 
 ## Usage
 
-1. Clone or download this repository to your local machine.
-2. Open a terminal and navigate to the directory containing the script.
-3. Run the script using the following command:
+1. Ensure Python 3 is installed.
+2. Run the script:
    ```bash
    python getall_muxthms.py
    ```
-4. The script will:
-   - Fetch the latest release information.
-   - Identify `.muxthm` files in the release assets.
-   - Download the files to the specified output directory.
-   - Display progress and log any errors.
+3. Downloaded files will be saved in the `muxthm_downloads` directory.
 
 ## Output
 
